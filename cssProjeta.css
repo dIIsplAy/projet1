@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+}
+
+#banner {
+    background-image: url("https://a-v2.sndcdn.com/assets/images/home/hp_image-6155d6b.jpg");
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+nav>a {
+    margin-right: 2em;
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+}
+
+.sound {
+    padding: 1em;
+}
+
+.toto {
+    margin-left: auto;
+    padding: 1em;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#bt1 {
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+#bt2 {
+    border: 1px solid orangered;
+    border-radius: 5px;
+    background-color: orangered;
+}
+
+#bt3 {
+    color: white;
+    text-decoration: none;
+    border: 1em solid orangered;
+    background-color: orangered
+}
+
+.conect {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: white;
+}
