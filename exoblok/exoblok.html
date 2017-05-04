@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>ExoBlok</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        #blok {
+            height: 40px;
+            width: 40px;
+            background-color: brown;
+            position: absolute;
+            /*transition: 2.5s linear;*/
+        }
+        
+        #blok2 {
+            height: 70px;
+            width: 70px;
+            background-color: blue;
+            position: absolute;
+            /*transition: 2.5s linear;*/
+        }
+        
+        #blok3 {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            position: absolute;
+            /*transition: 2.5s linear;*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="blok">
+    </div>
+    <script>
+        let banane = document.body;
+        banane.addEventListener("mousemove", function(event) {
+
+            let x = event.clientX;
+            let y = event.clientY;
+            console.log(x + " " + " " + y);
+            let blok = document.querySelector("#blok");
+            blok.style.top = y + "px";
+            blok.style.left = x + "px";
+            blok.style.transition = "all 600ms linear 200ms";
+            blok.style.borderRadius = (((50 * x) / 1200) + "%");
+
+            if (x < 100) {
+                blok.style.backgroundColor = "brown";
+            } else if (x < 300) {
+                blok.style.backgroundColor = "brown";
+            } else if (x == 200) {
+                blok.style.width = "500px";
+                blok.style.height = "500px";
+            } else {
+                blok.style.backgroundColor = "brown";
+            }
+
+
+
+        });
+    </script>
+    <div id="blok2">
+    </div>
+    <script>
+        let bananee = document.body;
+        bananee.addEventListener("mousemove", function(event) {
+
+            let x = event.clientX;
+            let y = event.clientY;
+            console.log(x + " " + " " + y);
+            let blok2 = document.querySelector("#blok2");
+            blok2.style.top = y + "px";
+            blok2.style.left = x + "px";
+            blok2.style.transition = "all 900ms linear 400ms";
+            blok2.style.borderRadius = (((50 * x) / 1200) + "%");
+            blok2.style.transform = "rotate(360deg,)";
+
+            if (x < 100) {
+                blok2.style.backgroundColor = "brown";
+            } else if (x < 300) {
+                blok2.style.backgroundColor = "brown";
+            } else if (x == 200) {
+                blok2.style.width = "500px";
+                blok2.style.height = "500px";
+            } else {
+                blok2.style.backgroundColor = "brown";
+            }
+
+
+
+        });
+    </script>
+    <div id="blok3">
+    </div>
+    <script>
+        let bananeee = document.body;
+        bananeee.addEventListener("mousemove", function(event) {
+
+            let x = event.clientX;
+            let y = event.clientY;
+            console.log(x + " " + " " + y);
+            let blok3 = document.querySelector("#blok3");
+            blok3.style.top = y + "px";
+            blok3.style.left = x + "px";
+            blok3.style.transition = "all 1200ms linear 600ms";
+            blok3.style.borderRadius = (((50 * x) / 1200) + "%");
+            blok3.style.height = ((20 * x) / (window.innerHeight) + "%");
+
+            if (x < 100) {
+                blok3.style.backgroundColor = "brown";
+            } else if (x < 300) {
+                blok3.style.backgroundColor = "brown";
+            } else if (x == 200) {
+                blok3.style.width = "500px";
+                blok3.style.height = "500px";
+            } else {
+                blok3.style.backgroundColor = "brown";
+            }
+
+
+
+        });
+    </script>
+
+
+
+
+
+</body>
+
+</html>
