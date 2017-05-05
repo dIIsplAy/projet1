@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            text-shadow: black;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: red;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #inputt {
+            margin-left: 38em;
+            height: 20px;
+            width: 200px;
+            border: solid 1px red;
+            text-align: center;
+        }
+        
+        h2 {
+            display: flex;
+            justify-content: center;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #result {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            color: red;
+            margin-left: 27em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Say me more </h1>
+    <form method="POST" action="#">
+        <input type="text" name="info" id="inputt" value="info" placeholder="say me" />
+        <input type="submit" id="sub" value="i love js">
+    </form>
+
+    <h2>Resultat</h2>
+    <ul id="result"></ul>
+
+    <script>
+        "use strict";
+        let form = document.querySelector("form");
+        form.addEventListener("submit", function(e) {
+
+            let a = document.querySelector("#inputt").value;
+            console.log(a);
+            let li = document.createElement("li");
+            let content = document.createTextNode(a);
+
+            li.appendChild(content);
+            document.querySelector("#result").appendChild(li);
+
+            let button = document.createElement("button");
+            button.textContent = "i love js";
+            button.addEventListener("click", function() {
+                let ul = document.querySelector("#result");
+                ul.removeChild(li);
+            });
+
+            li.appendChild(content);
+            li.appendChild(button);
+
+            document.querySelector("#result").appendChild(li);
+
+
+
+
+
+
+
+
+            e.preventDefault();
+
+
+
+        })
+    </script>
+</body>
+
+</html>
