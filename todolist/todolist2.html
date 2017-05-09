@@ -52,18 +52,20 @@
 
     <h2>Resultat</h2>
     <ul id="result"></ul>
-
+    <!--/*<div id="butt"></div>-->
     <script>
         "use strict";
         let form = document.querySelector("form");
         form.addEventListener("submit", function(e) {
+            e.preventDefault();
 
             let a = document.querySelector("#inputt").value;
             console.log(a);
             let li = document.createElement("li");
             let content = document.createTextNode(a);
+            let span = document.createElement("span");
 
-            li.appendChild(content);
+            span.appendChild(content);
             document.querySelector("#result").appendChild(li);
 
             let button = document.createElement("button");
@@ -73,8 +75,12 @@
                 ul.removeChild(li);
             });
 
-            li.appendChild(content);
+            li.appendChild(span);
             li.appendChild(button);
+            li.addEventListener("dblclick", function(a) {
+                span.contentEditable = "true";
+
+            });
 
             document.querySelector("#result").appendChild(li);
 
@@ -85,7 +91,6 @@
 
 
 
-            e.preventDefault();
 
 
 
