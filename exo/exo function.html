@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <button id="Button">Press me</button>
+
+
+
+
+    <script type="text/javascript">
+        let button = document.getElementById("Button");
+
+
+        button.addEventListener('click', function() {
+
+            let p = document.createElement('p');
+
+
+            p.innerHTML = "salut";
+            document.body.appendChild(p);
+
+            console.log(p);
+
+        });
+    </script>
+</body>
+
+</html>
