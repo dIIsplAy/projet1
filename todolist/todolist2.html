@@ -8,6 +8,10 @@
     <title>Document</title>
 
     <style>
+        li {
+            list-style: none;
+        }
+        
         h1 {
             text-shadow: black;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -47,7 +51,7 @@
     <h1>Say me more </h1>
     <form method="POST" action="#">
         <input type="text" name="info" id="inputt" value="info" placeholder="say me" />
-        <input type="submit" id="sub" value="i love js">
+        <input type="submit" id="sub" value="SEND">
     </form>
 
     <h2>Resultat</h2>
@@ -69,7 +73,7 @@
             document.querySelector("#result").appendChild(li);
 
             let button = document.createElement("button");
-            button.textContent = "i love js";
+            button.textContent = "X";
             button.addEventListener("click", function() {
                 let ul = document.querySelector("#result");
                 ul.removeChild(li);

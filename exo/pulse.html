@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        @keyframes toRed {
+            to {
+                background-color: red;
+            }
+        }
+        
+        @keyframes toGreen {
+            to {
+                background-color: green;
+            }
+        }
+        
+        .pulseRed {
+            animation-name: toRed;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+        }
+        
+        .pulseGreen {
+            animation-name: toGreen;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button id="btn">click</button>
+    <input type=text id=txt />
+
+
+
+    <script>
+        let txt = document.querySelector('#txt');
+        let btn = document.querySelector('#btn');
+        btn.addEventListener('click', function() {
+            if (txt.value === "") {
+                btn.classList.add('pulseRed');
+                btn.addEventListener('animationend', function() {
+                    btn.classList = '';
+                })
+            } else {
+                btn.classList.add('pulseGreen');
+                btn.addEventListener('animationend', function() {
+                    btn.classList = "";
+                })
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // else {
+        //     btn.addEventListener('click', function() {
+        //             btn.classList.add('pulseGreen');
+
+        //         }
+        //     })
+    </script>
+</body>
+
+</html>
