@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        let table = [{
+            ntable: 1,
+            nPlace: 3,
+            personnes: [{
+                    nom: "thomas",
+                }, {
+
+                    prenom: "Julien",
+                },
+
+                {
+
+                    prenom: "Manon",
+                }
+            ],
+        }, {
+            ntable: 2,
+            nPlace: 3,
+            personnes: [{
+
+                    prenom: "eeeeee",
+                }, {
+
+                    prenom: "ttttt",
+                }, {
+
+                    prenom: "uuuuu",
+                },
+
+            ]
+        }, {
+            ntable: 3,
+            nPlace: 3,
+            personnes: [{
+
+                prenom: "oooooo",
+
+            }, {
+
+                prenom: "qqqqq",
+            }, {
+
+                prenom: "dddddd",
+            }, ]
+        }, {
+            ntable: 4,
+            nPlace: 3,
+            personnes: [{
+
+                    prenom: "ggggg",
+                },
+
+
+                {
+
+                    prenom: "jjjjj",
+                }, {
+
+                    prenom: "llllll",
+
+                },
+
+            ],
+        }];
+        for (let tables of table) {
+            console.log('la tables n°' + tables.ntable + 'comporte' + tables.nPlace + 'place,les persones');
+            for (let person of tables.personnes) {
+                console.log(person.prenom);
+            }
+
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tp for reach</title>
+</head>
+
+<body>
+
+
+    <form method="Get" type=text id=form>
+        <label for="clef">Clef</label>
+        <input type="text" id="clef">
+        <label for="valeur">valeur</label>
+        <input type="text" id="valeur">
+
+        <input type="button" id="button" value="add">
+    </form>
+
+
+
+
+
+
+
+    <script>
+        let objet = {};
+        document.querySelector('#button')
+            .addEventListener('click', function() {
+                let inputClef = document.querySelector('#clef');
+                let inputValeur = document.querySelector('#valeur');
+
+
+                if (objet.hasOwnProperty(inputClef.value)) {
+                    objet[inputClef.value] += ',' + inputValeur.value;
+
+                } else {
+                    objet[inputClef.value] = inputValeur.value;
+
+                }
+                console.log(objet);
+
+
+
+
+
+            });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: "capcommega";
+            src: url('emulogic.ttf');
+        }
+        
+        #audio {
+            display: none;
+        }
+        
+        #start {
+            text-decoration: none;
+            color: white;
+            font-family: "capcommega";
+            font-style: none;
+            background-color: lightslategray;
+            width: 6em;
+            height: 2em;
+            margin-bottom: 1em;
+            font-size: 2em;
+        }
+        
+        #button {
+            text-decoration: none;
+            height: 94vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        
+        #player {
+            font-family: "capcommega";
+            font-size: 2em;
+            position: absolute;
+            bottom: 17%;
+            left: 31%;
+            color: red;
+        }
+        
+        body {
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 98vh;
+            background-color: black;
+            background-size: 100%;
+            background-image: url("http://3.bp.blogspot.com/-WAvKdweFT2w/UVqNYkPRS2I/AAAAAAAAAI0/zzVeF-nAjio/s1600/mega_man_logo_v-notes.png")
+        }
+    </style>
+</head>
+
+<body>
+    <section id="audio">
+        <audio src="megasound.mp3" controls autoplay></audio>
+    </section>
+    <p id="player"> Player VS Player</p>
+    <div id="button">
+
+        <a href="combat.html"><input type="button" value="START" id="start" /></a>
+    </div>
+
+</body>
+
+</html>

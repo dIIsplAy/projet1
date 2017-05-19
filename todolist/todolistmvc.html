@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <form>
+        <input type="text" id="saisi" placeholder="Entrer votre text ici"></input>
+        <input type="button" id="button" value="+"></input>
+    </form>
+
+    <ul id="ul">
+
+    </ul>
+    <script>
+        // les outils a utiliser*
+        let ul = document.getElementById("ul");
+        let button = document.getElementById("button");
+        let saisi = document.getElementById("saisi");
+        let tableau = [];
+        //créer événement sur button
+        button.addEventListener('click', function() {
+            //si rien dans champ de saisi alors bouton (clignote) rouge
+            if (saisi.value === "") {
+                //button deviens rouge
+                button.style.backgroundColor = "red";
+                //sinon button devient vert
+            } else {
+                //mettre le champ de saisie dans le tableau
+                tableau.push(saisi.value);
+                //button devient vert
+                button.style.backgroundColor = "green";
+                let comment = prompt("Un commentaire ?")
+                aff();
+            }
+        });
+
+        //fonction pour afficher les element dans l'ul
+        function aff() {
+            // vider le ul
+            ul.innerHTML = "";
+            // creer la boucle pour parcourir ELEMENT DU TABLEAU
+            for (let i = 0; i < tableau.length; i++) {
+                //créer le li
+                let li = document.createElement("li");
+                // valeur de li de chaque element du tableau
+                li.textContent = tableau[i];
+                // liée li créer à l'ul
+                ul.appendChild(li);
+                //créer un bouton suppr
+                let buton = document.createElement("button");
+                //lui mettre un text
+                buton.textContent = "X";
+                //lié buton a li
+                li.appendChild(buton);
+                // lui faire sa fonction
+
+                buton.onclick = function() {
+                    //lui dire de remove l'element du tableau
+                    tableau.splice(i, 1);
+
+                    aff();
+                };
+            }
+        }
+    </script>
+</body>
+
+</html>

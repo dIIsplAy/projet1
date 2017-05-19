@@ -8,14 +8,20 @@
     <title>Document</title>
 
     <style>
+        #sub {
+            margin-top: 10px;
+        }
+        
         li {
             list-style: none;
         }
         
         h1 {
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
             text-shadow: black;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            color: red;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: black;
             display: flex;
             justify-content: center;
         }
@@ -29,11 +35,15 @@
         }
         
         h2 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: black;
+            margin-top: 20px;
             display: flex;
             justify-content: center;
         }
         
         body {
+            background-color: lightslategray;
             display: flex;
             flex-direction: column;
         }
@@ -48,7 +58,7 @@
 </head>
 
 <body>
-    <h1>Say me more </h1>
+    <h1>To Do List!</h1>
     <form method="POST" action="#">
         <input type="text" name="info" id="inputt" value="info" placeholder="say me" />
         <input type="submit" id="sub" value="SEND">

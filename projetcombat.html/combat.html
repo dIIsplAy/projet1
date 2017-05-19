@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Combat</title>
+
+
+    <style>
+        @font-face {
+            font-family: "capcommega";
+            src: url('emulogic.ttf');
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .stat {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-left: 1em;
+        }
+        
+        .position {
+            margin-bottom: 0;
+            font-family: "capcommega";
+            color: black;
+            font-size: 0.9em;
+            display: flex;
+            border: 4px solid lightslategray;
+            height: 9.4em;
+            width: 50%;
+            background-color: white;
+        }
+        
+        body {
+            background-repeat: no-repeat;
+            background-color: black;
+            background-image: url("https://images.alphacoders.com/168/thumb-1920-16803.jpg");
+            background-size: 100%;
+            background-position-y: 212%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            justify-content: space-around;
+            width: 100%;
+            height: 98vh;
+        }
+        
+        .capcom {
+            font-size: 0.8em;
+            font-family: "capcommega";
+        }
+        
+        .player {
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            border-right: 3px solid lightslategray;
+        }
+        
+        #mega {
+            padding: 3px;
+            color: black;
+            list-style-type: none;
+            font-size: 3vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: solid 2px lightslategray;
+            border-left: solid 2px lightslategray;
+        }
+        
+        .zerostay {
+            width: 4em;
+            height: 6em;
+            background-image: url('imagemegaman/zerostart.png');
+            background-size: 1850%;
+            background-position: -900px -568px;
+        }
+        
+        .stay {
+            width: 4em;
+            height: 7em;
+            background-image: url('imagemegaman/megastart.png');
+            background-size: 1200% 500%;
+            background-position: 77% 23%;
+        }
+        
+        #zero {
+            align-items: center;
+            padding: 3px;
+            color: black;
+            list-style-type: none;
+            font-size: 3vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: solid 2px lightslategray;
+            border-left: solid 2px lightslategray;
+        }
+        
+        #audio {
+            display: none;
+        }
+        
+        #zeroattaque {
+            background-image: url('imagezero/basicattaque.png');
+            transform: scaleX(-1);
+            animation: zerooatt 3s;
+            animation-timing-function: step-end;
+            position: absolute;
+            bottom: 44%;
+            left: 75%;
+            width: 4em;
+            height: 7em;
+        }
+        
+        #animationzero {
+            background-image: url('imagezero/zerostart.png');
+            transform: scaleX(-1);
+            animation: zeroo 1.5s;
+            animation-timing-function: step-end;
+            position: absolute;
+            bottom: 44%;
+            left: 75%;
+            width: 3em;
+            height: 6em;
+        }
+        
+        #animationmega {
+            background-image: url('imagemegaman/megastart.png');
+            animation: mega 1.5s;
+            transform: scaleX(-1);
+            animation-timing-function: step-end;
+            position: absolute;
+            bottom: 44%;
+            left: 12%;
+            width: 4em;
+            height: 7em;
+        }
+        
+        @keyframes mega {
+            0% {
+                background-size: 1200% 500%;
+                background-position: 0% -2%;
+            }
+            4% {
+                background-position: 7% 0%;
+            }
+            8% {
+                background-position: 15% 0%;
+            }
+            12% {
+                background-position: 23% 0%;
+            }
+            16% {
+                background-position: 30% 0%;
+            }
+            20% {
+                background-position: 38% 0%;
+            }
+            24% {
+                background-position: 46% 0%;
+            }
+            28% {
+                background-position: 53.5% 0%;
+            }
+            32% {
+                background-position: 61.5% 0%;
+            }
+            36% {
+                background-position: 69.5% 0%;
+            }
+            40% {
+                background-position: 77.5% 0%;
+            }
+            44% {
+                background-position: 84.5% 0%;
+            }
+            48% {
+                background-position: 92.5% 0%;
+            }
+            52% {
+                background-position: 100.5% 0%;
+            }
+            56% {
+                background-position: 0% 23%;
+            }
+            60% {
+                background-position: 8% 23%;
+            }
+            64% {
+                background-position: 16% 23%;
+            }
+            68% {
+                background-position: 23% 23%;
+            }
+            72% {
+                background-position: 31% 23%;
+            }
+            76% {
+                background-position: 39% 23%;
+            }
+            80% {
+                background-position: 47% 23%;
+            }
+            84% {
+                background-position: 54% 23%;
+            }
+            88% {
+                background-position: 61% 23%;
+            }
+            92% {
+                background-position: 69% 23%;
+            }
+            96% {
+                background-position: 77% 23%;
+            }
+        }
+        
+        @keyframes zeroo {
+            0% {
+                background-size: 1850%;
+                background-position: -842px -551px;
+            }
+            4% {
+                background-position: -813px -561px;
+            }
+            8% {
+                background-position: -780px -562px;
+            }
+            12% {
+                background-position: -742px -558px;
+            }
+            16% {
+                background-position: -697px -558px;
+            }
+            20% {
+                background-position: -650px -558px;
+            }
+            24% {
+                background-position: -603px -558px;
+            }
+            28% {
+                background-position: -557px -558px;
+            }
+            32% {
+                background-position: -509px -558px;
+            }
+            36% {
+                background-position: -468px -558px;
+            }
+            40% {
+                background-position: -426px -558px;
+            }
+            44% {
+                background-position: -385px -558px;
+            }
+            48% {
+                background-position: -339px -558px;
+            }
+            52% {
+                background-position: -292px -558px;
+            }
+            56% {
+                background-position: -239px -558px;
+            }
+            60% {
+                background-position: -191px -559px;
+            }
+            64% {
+                background-position: -142px -559px;
+            }
+            68% {
+                background-position: -97px -559px;
+            }
+            72% {
+                background-position: -55px -559px;
+                ;
+            }
+            76% {
+                background-position: -7px -559px;
+            }
+            80% {
+                background-position: -585px -659px;
+            }
+            84% {
+                background-position: -632px -662px;
+            }
+            88% {
+                background-position: -675px -662px;
+            }
+            92% {
+                background-position: -716px -662px;
+            }
+            96% {
+                background-position: -759px -662px;
+            }
+        }
+        
+        @keyframes zerooatt {
+            0% {
+                background-size: 1931%;
+                background-position: -105px -3514px;
+                ;
+                width: 4.2em;
+                height: 5em;
+            }
+            11% {
+                background-size: 885%;
+                background-position: -772px -1615px;
+                width: 9.2em;
+                height: 5em;
+                left: 60%
+            }
+            22% {
+                background-size: 885%;
+                background-position: -774px -1615px;
+                width: 9.2em;
+                height: 5em;
+                left: 37%;
+            }
+            33% {
+                background-size: 885%;
+                background-position: -619px -1615px;
+                width: 9.2em;
+                height: 5em;
+                left: 27%;
+            }
+            44% {
+                background-position: -467px -1615px;
+                width: 9.2em;
+                height: 5em;
+                left: 15%;
+            }
+            55% {
+                background-position: -320px -1615px;
+                width: 9.2;
+                height: 5em;
+                left: 37%;
+            }
+            66% {
+                background-position: -171px -1615px;
+                width: 9.2em;
+                height: 5em;
+                left: 60%;
+            }
+            77% {
+                background-size: 1931%;
+                background-position: -105px -3514px;
+                left: 75%;
+                width: 4.2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <audio id="audio" src="megasoundfight.mp3" controls autoplay></audio>
+
+
+    <div id="animationmega">
+    </div>
+    <div id="animationzero">
+    </div>
+    <div id="zerobasicatt">
+    </div>
+
+    <div class="position">
+        <img src="http://static.tumblr.com/02e08499a90c8883447a82f33e9b03c9/b2c4nfk/594o5sspx/tumblr_static_8j4o72k7n98gckws088ogwkwg.png" />
+        <ul id="mega">
+            <li>M</li>
+            <li>E</li>
+            <li>G</li>
+            <li>A</li>
+            <li>M</li>
+
+        </ul>
+        <section class="player">
+            <button href="#" id="att1" class="capcom" onclick="attaque()">Mega Laser</button>
+            <button href="#" id="attspe" class="capcom" onclick="attaquespe()">Death Laser</button>
+            <button class="boostatt capcom" onclick="forceplus()">Attaque+</button>
+            <button class="boostdef capcom" onclick="defplus()">Deffence+</button>
+            <button class="heal capcom" onclick="healplus()">Heal+</button>
+        </section>
+        <section class="stat">
+            <h2>Hp : <span id="hpy"></span></h2>
+            <h6>Energy : <span id=energyy></span></h6>
+            <h5>Att: <span id="atty"></span></h5>
+            <h2>Att Spe: <span id=attspey></span></h2>
+            <h3>Force : <span id="forcey"></span></h3>
+            <h4>Def : <span id="defy"></span></h4>
+
+        </section>
+    </div>
+
+
+    <div class="position">
+        <img src="https://68.media.tumblr.com/avatar_cc38ee5c2c8c_128.png" />
+        <ul id="zero">
+            <li>Z</li>
+            <li>E</li>
+            <li>R</li>
+            <li>O</li>
+
+        </ul>
+        <section class="player">
+            <button id="att1" class="capcom zeroatt" onclick="attaque()">Zero Blade</button>
+            <button href="#" id="attspe" class="capcom" onclick="attaquespe()">Razor Blade</button>
+            <button id="" <button class="boostatt capcom" onclick="forceplus()">Attaque+</button>
+            <button class="boostdef capcom" onclick="defplus()">Deffence+</button>
+            <button class="heal capcom" onclick="healplus()">Heal+</button>
+        </section>
+        <section class="stat">
+            <h2>Hp : <span id="hpr"></span></h2>
+            <h6>Energy : <span id=energyr></span></h6>
+            <h5>Att : <span id="attr"></span></h5>
+            <h2>Att Spe: <span id=attsper></span></h2>
+            <h3>Force : <span id="forcer"></span></h3>
+            <h4>Def : <span id="defr"></span></h4>
+
+
+        </section>
+    </div>
+
+    <script>
+        let round = -1;
+        // let attaquant = {};
+        // let cible = {};
+
+        let att1 = document.body.querySelector("#att1");
+        let hpy = document.getElementById("hpy");
+        let hpr = document.getElementById("hpr");
+        let energyy = document.getElementById("energyy")
+        let energyr = document.getElementById("energyr")
+        let forcey = document.getElementById("forcey");
+        let forcer = document.getElementById("forcer");
+        let defy = document.getElementById("defy");
+        let defr = document.getElementById("defr");
+        let attspe = document.body.querySelector("attspe")
+
+
+        // animation
+
+        let animation = document.querySelector('#animationmega');
+        //    event animation
+        animation.addEventListener("animationend", function() {
+            animation.classList = "stay";
+
+        });
+
+        let animate = document.querySelector('#animationzero');
+        animate.addEventListener("animationend", function() {
+            animate.classList = "zerostay";
+
+        });
+
+
+
+        document.body.querySelector('.zeroatt').addEventListener('click', function() {
+            animate.style.display = "none";
+            document.body.querySelector('#zerobasicatt').id = "zeroattaque";
+            // let zeroanimate = document.querySelector("#zeroattaque");
+            // zeroanimate.addEventListener("animationend", function() {
+            //     zeroanimate.classList = "zerostay";
+            //     zeroanimate.id = "";
+            // });
+
+
+        });
+
+
+
+
+
+
+        let mega = {
+            hp: 100,
+            energy: 0,
+            force: 10,
+            attspe: 60,
+            att1: 12,
+
+            def: 6,
+        }
+        let zero = {
+            hp: 100,
+            energy: 0,
+            force: 10,
+            attspe: 60,
+            att1: 12,
+
+            def: 6,
+        }
+        let roundd = -1;
+        let attaquant = mega;
+        let cible = zero;
+        affichage();
+
+
+
+        function affichage() {
+            hpy.innerHTML = mega.hp;
+            hpr.innerHTML = zero.hp;
+            energyy.innerHTML = mega.energy;
+            energyr.innerHTML = zero.energy;
+            forcey.innerHTML = mega.force;
+            forcer.innerHTML = zero.force;
+            defy.innerHTML = mega.def;
+            defr.innerHTML = zero.def;
+            atty.innerHTML = mega.att1;
+            attr.innerHTML = zero.att1;
+            attspey.innerHTML = mega.attspe;
+            attsper.innerHTML = zero.attspe;
+        };
+
+        function defplus() {
+            attaquant.def += 3
+            affichage();
+            turnround();
+        }
+
+        function healplus() {
+            attaquant.hp += 10
+            affichage();
+            turnround();
+        }
+
+        function forceplus() {
+            attaquant.att1 += 4;
+            attaquant.attspe += 2;
+            attaquant.force += 4;
+            affichage();
+            turnround();
+
+
+        }
+
+        function attaque() {
+            let degat = attaquant['att1'] - cible.def;
+            cible.hp -= degat;
+            attaquant.energy += 20;
+            affichage();
+            turnround();
+        };
+
+
+        function attaquespe() {
+            if (attaquant.energy >= 60) {
+
+                let degat = attaquant['attspe'] - cible.def;
+                cible.hp -= degat;
+                attaquant.energy -= 60;
+
+
+                affichage();
+                turnround();
+            }
+        };
+
+        //function round
+        function turnround() {
+            round += 1;
+            if (round % 2 === 1) {
+                attaquant = mega;
+                cible = zero;
+            } else {
+                attaquant = zero;
+                cible = mega;
+
+            }
+
+        };
+    </script>
+
+</body>
+
+</html>
