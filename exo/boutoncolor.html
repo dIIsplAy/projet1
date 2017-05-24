@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+
+</head>
+
+<body>
+
+
+    <button type="button" id="red" value="yellow">Red</button>
+    <button type="button" id="blue" value="black">Blue</button>
+    <button type="button" id="green" value="pink">Green</button>
+
+
+
+    <script>
+        let but = document.getElementById("red");
+        let butt = document.getElementById("blue");
+        let butto = document.getElementById("green");
+
+
+
+        but.addEventListener('click', changeColor);
+        butt.addEventListener('click', changeColor);
+        butto.addEventListener('click', changeColor);
+
+        function changeColor() {
+            this.style.backgroundColor = this.value;
+
+        }
+    </script>
+
+</body>
+
+</html>

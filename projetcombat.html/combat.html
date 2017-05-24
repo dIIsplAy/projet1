@@ -9,141 +9,48 @@
 
 
     <style>
-        @font-face {
-            font-family: "capcommega";
-            src: url('emulogic.ttf');
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        .stat {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            margin-left: 1em;
-        }
-        
-        .position {
-            margin-bottom: 0;
-            font-family: "capcommega";
-            color: black;
-            font-size: 0.9em;
-            display: flex;
-            border: 4px solid lightslategray;
-            height: 9.4em;
-            width: 50%;
-            background-color: white;
-        }
-        
-        body {
-            background-repeat: no-repeat;
-            background-color: black;
-            background-image: url("https://images.alphacoders.com/168/thumb-1920-16803.jpg");
-            background-size: 100%;
-            background-position-y: 212%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            justify-content: space-around;
-            width: 100%;
-            height: 98vh;
-        }
-        
-        .capcom {
-            font-size: 0.8em;
-            font-family: "capcommega";
-        }
-        
-        .player {
-            padding: 0px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            border-right: 3px solid lightslategray;
-        }
-        
-        #mega {
-            padding: 3px;
-            color: black;
-            list-style-type: none;
-            font-size: 3vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-right: solid 2px lightslategray;
-            border-left: solid 2px lightslategray;
-        }
-        
-        .zerostay {
-            width: 4em;
-            height: 6em;
-            background-image: url('imagemegaman/zerostart.png');
-            background-size: 1850%;
-            background-position: -900px -568px;
-        }
-        
-        .stay {
-            width: 4em;
-            height: 7em;
-            background-image: url('imagemegaman/megastart.png');
-            background-size: 1200% 500%;
-            background-position: 77% 23%;
-        }
-        
-        #zero {
-            align-items: center;
-            padding: 3px;
-            color: black;
-            list-style-type: none;
-            font-size: 3vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-right: solid 2px lightslategray;
-            border-left: solid 2px lightslategray;
-        }
-        
-        #audio {
-            display: none;
-        }
-        
-        #zeroattaque {
-            background-image: url('imagezero/basicattaque.png');
-            transform: scaleX(-1);
-            animation: zerooatt 3s;
-            animation-timing-function: step-end;
-            position: absolute;
-            bottom: 44%;
-            left: 75%;
-            width: 4em;
-            height: 7em;
-        }
-        
-        #animationzero {
-            background-image: url('imagezero/zerostart.png');
-            transform: scaleX(-1);
-            animation: zeroo 1.5s;
-            animation-timing-function: step-end;
-            position: absolute;
-            bottom: 44%;
-            left: 75%;
-            width: 3em;
-            height: 6em;
-        }
-        
-        #animationmega {
-            background-image: url('imagemegaman/megastart.png');
-            animation: mega 1.5s;
-            transform: scaleX(-1);
-            animation-timing-function: step-end;
-            position: absolute;
-            bottom: 44%;
-            left: 12%;
-            width: 4em;
-            height: 7em;
+        @keyframes laser {
+            0% {
+                background-size: 1200% 7801%;
+                background-position: 9px -256px;
+            }
+            14% {
+                background-size: 1208% 7801%;
+                background-position: -105px -258px;
+                width: 120px;
+                left: 25%;
+            }
+            28% {
+                background-size: 838% 8333%;
+                background-position: -244px -261px;
+                width: 181px;
+                height: 4.8em;
+                left: 35%;
+            }
+            42% {
+                background-size: 1110% 8369%;
+                background-position: -507px -266px;
+                width: 160px;
+                left: 45%;
+            }
+            56% {
+                background-size: 1110% 8369%;
+                background-position: -678px -267px;
+                width: 160px;
+                left: 55%;
+            }
+            70% {
+                background-size: 1110% 8369%;
+                background-position: -840px -267px;
+                width: 160px;
+                left: 65%;
+            }
+            84% {
+                background-size: 1110% 8369%;
+                background-position: -997px -267px;
+                width: 160px;
+                left: 70%;
+            }
         }
         
         @keyframes mega {
@@ -228,65 +135,65 @@
         @keyframes zeroo {
             0% {
                 background-size: 1850%;
-                background-position: -842px -551px;
+                background-position: -842px -568px;
             }
             4% {
-                background-position: -813px -561px;
+                background-position: -813px -568px;
             }
             8% {
-                background-position: -780px -562px;
+                background-position: -780px -568px;
             }
             12% {
-                background-position: -742px -558px;
+                background-position: -742px -568px;
             }
             16% {
-                background-position: -697px -558px;
+                background-position: -697px -568px;
             }
             20% {
-                background-position: -650px -558px;
+                background-position: -650px -568px;
             }
             24% {
-                background-position: -603px -558px;
+                background-position: -603px -568px;
             }
             28% {
-                background-position: -557px -558px;
+                background-position: -557px -568px;
             }
             32% {
-                background-position: -509px -558px;
+                background-position: -509px -568px;
             }
             36% {
-                background-position: -468px -558px;
+                background-position: -468px -568px;
             }
             40% {
-                background-position: -426px -558px;
+                background-position: -426px -568px;
             }
             44% {
-                background-position: -385px -558px;
+                background-position: -385px -568px;
             }
             48% {
-                background-position: -339px -558px;
+                background-position: -339px -568px;
             }
             52% {
-                background-position: -292px -558px;
+                background-position: -292px -568px;
             }
             56% {
-                background-position: -239px -558px;
+                background-position: -239px -568px;
             }
             60% {
-                background-position: -191px -559px;
+                background-position: -191px -569px;
             }
             64% {
-                background-position: -142px -559px;
+                background-position: -142px -568px;
             }
             68% {
-                background-position: -97px -559px;
+                background-position: -97px -568px;
             }
             72% {
-                background-position: -55px -559px;
+                background-position: -55px -568px;
                 ;
             }
             76% {
-                background-position: -7px -559px;
+                background-position: -7px -568px;
             }
             80% {
                 background-position: -585px -659px;
@@ -320,12 +227,18 @@
                 height: 5em;
                 left: 60%
             }
+            15% {
+                left: 40%;
+            }
             22% {
                 background-size: 885%;
                 background-position: -774px -1615px;
                 width: 9.2em;
                 height: 5em;
                 left: 37%;
+            }
+            27% {
+                left: 32%;
             }
             33% {
                 background-size: 885%;
@@ -334,11 +247,17 @@
                 height: 5em;
                 left: 27%;
             }
+            38% {
+                left: 20%;
+            }
             44% {
                 background-position: -467px -1615px;
                 width: 9.2em;
                 height: 5em;
                 left: 15%;
+            }
+            49% {
+                left: 25%
             }
             55% {
                 background-position: -320px -1615px;
@@ -346,11 +265,17 @@
                 height: 5em;
                 left: 37%;
             }
+            60% {
+                left: 47%
+            }
             66% {
                 background-position: -171px -1615px;
                 width: 9.2em;
                 height: 5em;
                 left: 60%;
+            }
+            71% {
+                left: 68%
             }
             77% {
                 background-size: 1931%;
@@ -359,20 +284,557 @@
                 width: 4.2em;
             }
         }
+        
+        @keyframes megaaatt {
+            0% {
+                background-size: 2280% 7801%;
+                background-position: -7px -209px;
+                width: 60px;
+                height: 87px;
+            }
+            7% {
+                background-position: -81px -209px;
+                width: 60px;
+                height: 87px;
+            }
+            14% {
+                background-size: 1647% 7598%;
+                background-position: -150px -204px;
+                width: 75px;
+                height: 87px;
+            }
+            21% {
+                background-size: 1647% 7598%;
+                background-position: -236px -204px;
+                width: 75px;
+                height: 87px;
+            }
+            28% {
+                background-size: 1647% 7598%;
+                background-position: -325px -204px;
+                width: 75px;
+                height: 87px;
+            }
+            35% {
+                background-size: 1647% 7598%;
+                background-position: -410px -204px;
+                width: 75px;
+                height: 87px;
+            }
+            42% {
+                background-size: 1647% 7598%;
+                background-position: -493px -204px;
+                width: 75px;
+                height: 87px;
+            }
+            49% {
+                background-size: 1647% 7598%;
+                background-position: -575px -204px;
+                width: 75px;
+                height: 87px;
+            }
+            56% {
+                background-size: 1647% 7598%;
+                background-position: -660px -204px;
+                width: 75px;
+                height: 87px;
+            }
+            63% {
+                background-size: 1647% 7598%;
+                background-position: -744px -204px;
+                width: 75px;
+                height: 87px;
+            }
+            70% {
+                background-size: 1647% 7598%;
+                background-position: -831px -204px;
+                width: 75px;
+                height: 87px;
+            }
+            77% {
+                background-size: 1647% 7598%;
+                background-position: -918px -204px;
+                width: 75px;
+                height: 87px;
+            }
+            84% {
+                background-size: 1647% 7598%;
+                background-position: -1006px -204px;
+                width: 75px;
+                height: 87px;
+            }
+        }
+        
+        @keyframes zerooattspe {
+            0% {
+                background-size: 1100%;
+                background-position: -1038px -179px;
+            }
+            9% {
+                background-position: -1116px -179px;
+                left: 65%
+            }
+            14% {
+                left: 58%
+            }
+            18% {
+                background-position: -1191px -179px;
+                left: 52%;
+            }
+            23% {
+                left: 48%
+            }
+            27% {
+                background-size: 784%;
+                background-position: -1216px -162px;
+                left: 45%;
+                width: 8em;
+            }
+            31% {
+                left: 35%
+            }
+            35% {
+                background-size: 784%;
+                background-position: -1351px -162px;
+                width: 8em;
+                left: 18%;
+            }
+            44% {
+                background-size: 884%;
+                background-position: -1559px -179px;
+                width: 7.5em;
+                left: 12%;
+            }
+            53% {
+                background-size: 1007%;
+                background-position: -1908px -214px;
+                left: 22%;
+            }
+            58% {
+                left: 32%;
+            }
+            62% {
+                background-size: 1007%;
+                background-position: -2200px -214px;
+                left: 42%;
+            }
+            66% {
+                left: 58%;
+            }
+            71% {
+                background-size: 1007%;
+                background-position: -2300px -214px;
+                left: 75%;
+            }
+        }
+        
+        @keyframes megaaattspe {
+            0% {
+                background-size: 808% 4222%;
+                background-position: 9px 3602px;
+                ;
+            }
+            3% {
+                background-size: 894% 4335%;
+                background-position: -114px 3700px;
+                ;
+            }
+            6% {
+                background-size: 973% 4440%;
+                background-position: -255px 3793px;
+            }
+            9% {
+                background-size: 1062% 4554%;
+                background-position: -429px 3888px;
+            }
+            12% {
+                background-size: 1056% 4479%;
+                background-position: -578px 3820px;
+            }
+            15% {
+                background-size: 881% 4475%;
+                background-position: -9px 3707px;
+                width: 10em;
+            }
+            19% {
+                background-size: 784% 4475%;
+                background-position: -193px 4172px;
+                width: 11em;
+                height: 9em;
+            }
+            24% {
+                background-size: 716% 4475%;
+                background-position: -350px 4172px;
+            }
+            29% {
+                background-size: 716% 4475%;
+                background-position: -546px 4170px;
+            }
+            33% {
+                background-size: 716% 4475%;
+                background-position: -731px 4170px;
+            }
+            36% {
+                background-size: 716% 4475%;
+                background-position: -919px 4170px;
+            }
+            39% {
+                background-size: 716% 4475%;
+                background-position: 0px 4044px;
+            }
+            42% {
+                background-size: 716% 4475%;
+                background-position: -189px 4044px;
+            }
+            45% {
+                background-size: 716% 4475%;
+                background-position: -391px 4044px;
+            }
+            48% {
+                background-size: 716% 4475%;
+                background-position: -582px 4044px;
+            }
+            51% {
+                background-size: 716% 4475%;
+                background-position: -801px 4044px;
+            }
+            54% {
+                background-size: 716% 4475%;
+                background-position: -985px 4044px;
+            }
+            57% {
+                background-size: 716% 4475%;
+                background-position: -4px 3922px;
+            }
+            60% {
+                background-size: 716% 4475%;
+                background-position: -200px 3913px;
+            }
+            63% {
+                background-size: 716% 4475%;
+                background-position: -431px 3913px;
+            }
+            66% {
+                background-size: 716% 4475%;
+                background-position: -629px 3913px;
+            }
+            69% {
+                background-size: 716% 4475%;
+                background-position: -858px 3913px;
+            }
+            72% {
+                background-size: 716% 4475%;
+                background-position: -31px 3777px;
+            }
+            75% {
+                background-size: 716% 4475%;
+                background-position: -255px 3777px;
+            }
+            78% {
+                background-size: 716% 4475%;
+                background-position: -461px 3777px;
+            }
+            81% {
+                background-size: 664% 4510%;
+                background-position: -712px 3803px;
+                width: 12em;
+            }
+            84% {
+                background-size: 664% 4510%;
+                background-position: -931px 3803px;
+            }
+            87% {
+                background-size: 664% 4510%;
+                background-position: -18px 3658px;
+            }
+            90% {
+                background-size: 664% 4510%;
+                background-position: -224px 3658px;
+            }
+        }
+        
+        @keyframes laserspe {
+            0% {
+                background-size: 804% 7589%;
+                background-position: -7px -517px;
+                left: 30%
+            }
+            16% {
+                background-size: 1017% 7589%;
+                background-position: -252px -514px;
+                left: 40%;
+            }
+            32% {
+                background-size: 1143% 6898%;
+                background-position: -474px -463px;
+                left: 50%;
+            }
+            48% {
+                background-size: 1143% 6898%;
+                background-position: -643px -463px;
+                left: 60%;
+            }
+            64% {
+                background-size: 1143% 6898%;
+                background-position: -846px -463px;
+                left: 65%;
+            }
+            80% {
+                background-size: 1074% 7082%;
+                background-position: -998px -473px;
+                left: 75%;
+            }
+        }
+        
+        @keyframes deathM {
+            0% {}
+            20% {}
+            40% {}
+            60% {}
+            80% {}
+            100% {}
+        }
+        
+        @font-face {
+            font-family: "capcommega";
+            src: url('emulogic.ttf');
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .stat {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-left: 1em;
+        }
+        
+        .position {
+            margin-bottom: 0;
+            font-family: "capcommega";
+            color: black;
+            font-size: 0.9em;
+            display: flex;
+            border: 4px solid lightslategray;
+            height: 9.4em;
+            width: 50%;
+            background-color: white;
+        }
+        
+        body {
+            background-repeat: no-repeat;
+            background-color: black;
+            background-image: url("https://images.alphacoders.com/168/thumb-1920-16803.jpg");
+            background-size: 100%;
+            background-position-y: 212%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            justify-content: space-around;
+            width: 100%;
+            height: 98vh;
+        }
+        
+        .capcom {
+            font-size: 0.8em;
+            font-family: "capcommega";
+        }
+        
+        .player {
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            border-right: 3px solid lightslategray;
+        }
+        
+        #mega {
+            padding: 3px;
+            color: black;
+            list-style-type: none;
+            font-size: 3vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: solid 2px lightslategray;
+            border-left: solid 2px lightslategray;
+        }
+        
+        #zeromain {
+            transform: scaleX(-1);
+            position: absolute;
+            bottom: 44%;
+            left: 75%;
+            width: 3em;
+            height: 6em;
+            background-image: url('imagezero/zerostart.png');
+            background-size: 1850%;
+            background-position: -900px -568px;
+        }
+        
+        #megamain {
+            bottom: 44%;
+            left: 12%;
+            transform: scaleX(-1);
+            position: absolute;
+            width: 4em;
+            height: 7em;
+            background-image: url('imagemegaman/megastart.png');
+            background-size: 1800% 500%;
+            background-position: 77% 23%;
+        }
+        
+        #zero {
+            align-items: center;
+            padding: 3px;
+            color: black;
+            list-style-type: none;
+            font-size: 3vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: solid 2px lightslategray;
+            border-left: solid 2px lightslategray;
+        }
+        
+        #audio {
+            display: none;
+        }
+        
+        #zeromain.zeroattaque {
+            background-image: url('imagezero/basicattaque.png');
+            transform: scaleX(-1);
+            animation: zerooatt 1.5s;
+            animation-timing-function: step-end;
+            position: absolute;
+            bottom: 44%;
+            left: 75%;
+            width: 4em;
+            height: 7em;
+        }
+        
+        #zeromain.zeroattaquespe {
+            background-image: url('imagezero/attaquespe.png');
+            transform: scaleX(-1);
+            animation: zerooattspe 1.5s;
+            animation-timing-function: step-end;
+            position: absolute;
+            bottom: 44%;
+            left: 75%;
+            width: 6em;
+            height: 7em;
+        }
+        
+        #megamain.megaattaque {
+            transform: none;
+            animation: megaaatt 1.5s;
+            background-image: url('imagemegaman/megamanattaque.png');
+            animation-timing-function: step-end;
+            position: absolute;
+            bottom: 44%;
+            left: 12%;
+            width: 4em;
+            height: 7em;
+        }
+        
+        #megamain.megaattaquespe {
+            transform: none;
+            animation: megaaattspe 2.2s;
+            background-image: url('imagemegaman/megamanattaque.png');
+            animation-timing-function: step-end;
+            position: absolute;
+            bottom: 44%;
+            left: 12%;
+            width: 8em;
+            height: 8em;
+        }
+        /*#megamain.deathmega {
+            border: 1px solid white;
+            animation: deathM 2s;
+            background-image: url('imagemegaman/megamanattaque.png');
+            animation-timing-function: step-end;
+            position: absolute;
+            bottom: 44%;
+            left: 12%;
+            width: 8em;
+            height: 8em;
+            background-size: 100% ;
+            background-position: 894px 7848px;
+        }*/
+        
+        .laserspe {
+            animation-delay: 6s;
+            animation: laserspe 1.5s;
+            transform: none;
+            background-image: url('imagemegaman/megamanattaque.png');
+            animation-timing-function: step-end;
+            position: absolute;
+            bottom: 44%;
+            Left: 24%;
+            display: none;
+            height: 8em;
+            width: 12em;
+        }
+        
+        .megalaser {
+            background-size: 1200% 7801%;
+            background-position: 9px -256px;
+            animation: laser 1.5s;
+            transform: none;
+            background-image: url('imagemegaman/megamanattaque.png');
+            width: 9em;
+            animation-timing-function: step-end;
+            height: 5em;
+            position: absolute;
+            /*animation-delay: 1.6s;*/
+            bottom: 44%;
+            Left: 16%;
+            display: none
+        }
+        
+        .animationzero {
+            background-image: url('imagezero/zerostart.png');
+            transform: scaleX(-1);
+            animation: zeroo 1.5s;
+            animation-timing-function: step-end;
+            position: absolute;
+            bottom: 44%;
+            left: 75%;
+            width: 3em;
+            height: 6em;
+        }
+        
+        .animationmega {
+            background-image: url('imagemegaman/megastart.png');
+            animation: mega 1.5s;
+            animation-timing-function: step-end;
+            position: absolute;
+            bottom: 44%;
+            left: 12%;
+            width: 4em;
+            height: 7em;
+        }
     </style>
 </head>
 
 <body>
 
     <audio id="audio" src="megasoundfight.mp3" controls autoplay></audio>
+    <!--deathmega-->
+    <!--animationmega-->
 
+    <div id="megamain" class="animationmega ">
+    </div>
+    <div id="zeromain" class="animationzero">
+    </div>
+    <div class="megalaser">
+    </div>
+    <div class="laserspe">
+    </div>
 
-    <div id="animationmega">
-    </div>
-    <div id="animationzero">
-    </div>
-    <div id="zerobasicatt">
-    </div>
 
     <div class="position">
         <img src="http://static.tumblr.com/02e08499a90c8883447a82f33e9b03c9/b2c4nfk/594o5sspx/tumblr_static_8j4o72k7n98gckws088ogwkwg.png" />
@@ -385,8 +847,8 @@
 
         </ul>
         <section class="player">
-            <button href="#" id="att1" class="capcom" onclick="attaque()">Mega Laser</button>
-            <button href="#" id="attspe" class="capcom" onclick="attaquespe()">Death Laser</button>
+            <button href="#" id="att1" class="capcom megaatt" onclick="attaque()">Mega Laser</button>
+            <button href="#" id="attspe" class="capcom megaattspe" onclick="attaquespe()">Death Laser</button>
             <button class="boostatt capcom" onclick="forceplus()">Attaque+</button>
             <button class="boostdef capcom" onclick="defplus()">Deffence+</button>
             <button class="heal capcom" onclick="healplus()">Heal+</button>
@@ -414,7 +876,7 @@
         </ul>
         <section class="player">
             <button id="att1" class="capcom zeroatt" onclick="attaque()">Zero Blade</button>
-            <button href="#" id="attspe" class="capcom" onclick="attaquespe()">Razor Blade</button>
+            <button href="#" id="attspe" class="capcom zeroattspe" onclick="attaquespe()">Razor Blade</button>
             <button id="" <button class="boostatt capcom" onclick="forceplus()">Attaque+</button>
             <button class="boostdef capcom" onclick="defplus()">Deffence+</button>
             <button class="heal capcom" onclick="healplus()">Heal+</button>
@@ -433,8 +895,8 @@
 
     <script>
         let round = -1;
-        // let attaquant = {};
-        // let cible = {};
+        // let attaquant = "mega";
+        // let cible = "zero";
 
         let att1 = document.body.querySelector("#att1");
         let hpy = document.getElementById("hpy");
@@ -450,32 +912,69 @@
 
         // animation
 
-        let animation = document.querySelector('#animationmega');
+        let animation = document.querySelector('.animationmega');
         //    event animation
         animation.addEventListener("animationend", function() {
-            animation.classList = "stay";
+            animation.className = "";
 
         });
 
-        let animate = document.querySelector('#animationzero');
+        let animate = document.querySelector('.animationzero');
         animate.addEventListener("animationend", function() {
-            animate.classList = "zerostay";
+            animate.className = "";
 
         });
 
 
 
         document.body.querySelector('.zeroatt').addEventListener('click', function() {
-            animate.style.display = "none";
-            document.body.querySelector('#zerobasicatt').id = "zeroattaque";
-            // let zeroanimate = document.querySelector("#zeroattaque");
-            // zeroanimate.addEventListener("animationend", function() {
-            //     zeroanimate.classList = "zerostay";
-            //     zeroanimate.id = "";
-            // });
+
+            document.body.querySelector('#zeromain').classList.add("zeroattaque");
+
 
 
         });
+
+        document.body.querySelector('.megaatt').addEventListener('click', function() {
+
+            document.body.querySelector('#megamain').classList.add("megaattaque");
+            document.body.querySelector('.megalaser').style.display = "block";
+
+
+        });
+
+        // attaquebasique
+
+        let laser = document.body.querySelector('.megalaser');
+        laser.addEventListener("animationend", function() {
+            this.style.display = "none";
+
+        });
+        document.body.querySelector('.zeroattspe').addEventListener('click', function() {
+
+            document.body.querySelector('#zeromain').classList.add("zeroattaquespe");
+        });
+        // attaquespecial
+        document.body.querySelector('.megaattspe').addEventListener('click', function() {
+
+            document.body.querySelector('#megamain').classList.add("megaattaquespe");
+            setTimeout(function() {
+
+                document.body.querySelector('.laserspe').style.display = "block";
+            }, 2200);
+
+        })
+
+
+        let lasermegaspe = document.body.querySelector('.laserspe');
+        lasermegaspe.addEventListener("animationend", function() {
+            this.style.display = "none";
+        });
+
+
+
+
+
 
 
 
@@ -487,7 +986,7 @@
             energy: 0,
             force: 10,
             attspe: 60,
-            att1: 12,
+            att1: 20,
 
             def: 6,
         }
@@ -496,7 +995,7 @@
             energy: 0,
             force: 10,
             attspe: 60,
-            att1: 12,
+            att1: 20,
 
             def: 6,
         }
@@ -529,7 +1028,10 @@
         }
 
         function healplus() {
-            attaquant.hp += 10
+            attaquant.hp += 10;
+            if (attaquant.hp >= 100) {
+                attaquant.hp = 100;
+            }
             affichage();
             turnround();
         }
@@ -548,6 +1050,10 @@
             let degat = attaquant['att1'] - cible.def;
             cible.hp -= degat;
             attaquant.energy += 20;
+
+            if (cible.hp <= 0) {
+                cible.hp = 0;
+            }
             affichage();
             turnround();
         };
@@ -559,6 +1065,9 @@
                 let degat = attaquant['attspe'] - cible.def;
                 cible.hp -= degat;
                 attaquant.energy -= 60;
+                if (cible.hp <= 0) {
+                    cible.hp = 0;
+                }
 
 
                 affichage();
