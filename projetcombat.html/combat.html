@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Combat</title>
+    <title>combat</title>
 
 
     <style>
@@ -587,13 +587,134 @@
         }
         
         @keyframes deathM {
-            0% {}
-            20% {}
-            40% {}
-            60% {}
-            80% {}
-            100% {}
+            0% {
+                background-size: 1148%;
+                background-position: 653px 2495px;
+            }
+            20% {
+                background-size: 1148%;
+                background-position: 538px 2504px;
+            }
+            40% {
+                background-size: 1148%;
+                background-position: 424px 2504px;
+            }
+            60% {
+                background-size: 1148%;
+                background-position: 305px 2504px;
+            }
+            80% {
+                background-size: 1148%;
+                background-position: 180px 2504px;
+            }
         }
+        
+        @keyframes deathZ {
+            0% {
+                background-size: 1750%;
+                background-position: -553px 293px;
+            }
+            20% {
+                background-size: 1750%;
+                background-position: -506px 293px;
+            }
+            40% {
+                background-size: 1750%;
+                background-position: -462px 293px;
+            }
+            60% {
+                background-size: 1750%;
+                background-position: -367px 293px;
+            }
+            80% {
+                background-size: 1750%;
+                background-position: -309px 293px;
+            }
+            100% {
+                background-size: 1750%;
+                background-position: -249px 293px;
+            }
+        }
+        
+        @keyframes zerooAttitude {
+            0% {
+                background-size: 1850%;
+                background-position: -1439px 29px;
+            }
+            20% {
+                background-size: 1850%;
+                background-position: -1383px 29px;
+            }
+            40% {
+                background-size: 1850%;
+                background-position: -1326px 29px;
+            }
+            60% {
+                background-size: 1850%;
+                background-position: -1263px 29px;
+            }
+            80% {
+                background-size: 1850%;
+                background-position: -1204px 29px;
+            }
+            100% {
+                background-size: 1850%;
+                background-position: -1146px 29px;
+            }
+        }
+        
+        @keyframes megaAttitude {
+            0% {
+                background-size: 1800% 500%;
+                background-position: 1% 73%;
+            }
+            20% {
+                background-size: 1800% 500%;
+                background-position: 9% 73%;
+            }
+            40% {
+                background-size: 1800% 500%;
+                background-position: 16% 73%;
+            }
+            60% {
+                background-size: 1800% 500%;
+                background-position: 24% 73%;
+            }
+            80% {
+                background-size: 1800% 500%;
+                background-position: 31% 73%;
+            }
+            100% {
+                background-size: 1800% 500%;
+                background-position: 1% 73%;
+            }
+        }
+        /*@keyframes megaAtti {
+            0% {
+                background-size: 1866% 8801%;
+                background-position: -14px 19px;
+            }
+            20% {
+                background-size: 1866% 8801%;
+                background-position: -108px 19px;
+            }
+            40% {
+                background-size: 1866% 8801%;
+                background-position: -202px 19px;
+            }
+            60% {
+                background-size: 1866% 8801%;
+                background-position: -299px 19px;
+            }
+            80% {
+                background-size: 1866% 8801%;
+                background-position: -396px 19px;
+            }
+            100% {
+                background-size: 1866% 8801%;
+                background-position: -491px 19px;
+            }
+        }*/
         
         @font-face {
             font-family: "capcommega";
@@ -674,6 +795,18 @@
             background-size: 1850%;
             background-position: -900px -568px;
         }
+        /*#megamain {
+            background-repeat: no-repeat;
+            bottom: 44%;
+            left: 12%;
+            transform: scaleX(-1);
+            position: absolute;
+            width: 5em;
+            height: 5em;
+            background-image: url('imagemegaman/megamanattaque.png');
+            background-size: 1866% 8801%;
+            background-position: -14px 19px;
+        }*/
         
         #megamain {
             bottom: 44%;
@@ -701,6 +834,10 @@
         }
         
         #audio {
+            display: none;
+        }
+        
+        #megaudio {
             display: none;
         }
         
@@ -751,8 +888,8 @@
             width: 8em;
             height: 8em;
         }
-        /*#megamain.deathmega {
-            border: 1px solid white;
+        
+        #megamain.deathmega {
             animation: deathM 2s;
             background-image: url('imagemegaman/megamanattaque.png');
             animation-timing-function: step-end;
@@ -760,14 +897,23 @@
             bottom: 44%;
             left: 12%;
             width: 8em;
-            height: 8em;
-            background-size: 100% ;
-            background-position: 894px 7848px;
-        }*/
+            height: 6em;
+        }
+        
+        .zerodeath {
+            animation: deathZ 1.5s;
+            background-image: url('imagezero/basicattaque.png');
+            animation-timing-function: step-end;
+            position: absolute;
+            bottom: 44%;
+            left: 75%;
+            width: 5.5em;
+            height: 6em;
+        }
         
         .laserspe {
             animation-delay: 6s;
-            animation: laserspe 1.5s;
+            animation: laserspe 1s;
             transform: none;
             background-image: url('imagemegaman/megamanattaque.png');
             animation-timing-function: step-end;
@@ -817,16 +963,29 @@
             width: 4em;
             height: 7em;
         }
+        
+        .zeroFlow {
+            animation: zerooAttitude 1.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: step-end;
+        }
+        
+        .megaFlow {
+            animation: megaAttitude 1.7s;
+            animation-iteration-count: infinite;
+            animation-timing-function: step-end;
+        }
     </style>
 </head>
 
 <body>
 
-    <audio id="audio" src="megasoundfight.mp3" controls autoplay></audio>
+    <!--<audio id="audio" src="megasoundfight.mp3" controls autoplay></audio>-->
     <!--deathmega-->
     <!--animationmega-->
+    <!--animationzero-->
 
-    <div id="megamain" class="animationmega ">
+    <div id="megamain" class="animationmega">
     </div>
     <div id="zeromain" class="animationzero">
     </div>
@@ -894,10 +1053,23 @@
     </div>
 
     <script>
+        // Audio
+        let themeaudio = new Audio('megasoundfight.mp3');
+        themeaudio.play();
+        themeaudio.loop = Infinity;
+        themeaudio.volume = 0.3;
+        let zeroaudio = new Audio('zerobasicatt.mp3')
+        zeroaudio.volume = 1;
+        let megaudio = new Audio('megaudio.mp3');
+        megaudio.volume = 1;
+        let megaudioult = new Audio('megaudio.mp3');
+        megaudio.volume = 1;
+        let ultiaudiom = new Audio('megault.mp3');
+        ultiaudiom.volume = 1;
+        // Fin audio
         let round = -1;
         // let attaquant = "mega";
         // let cible = "zero";
-
         let att1 = document.body.querySelector("#att1");
         let hpy = document.getElementById("hpy");
         let hpr = document.getElementById("hpr");
@@ -915,13 +1087,13 @@
         let animation = document.querySelector('.animationmega');
         //    event animation
         animation.addEventListener("animationend", function() {
-            animation.className = "";
+            animation.className = "megaFlow";
 
         });
 
         let animate = document.querySelector('.animationzero');
         animate.addEventListener("animationend", function() {
-            animate.className = "";
+            animate.className = "zeroFlow";
 
         });
 
@@ -930,6 +1102,7 @@
         document.body.querySelector('.zeroatt').addEventListener('click', function() {
 
             document.body.querySelector('#zeromain').classList.add("zeroattaque");
+            zeroaudio.play();
 
 
 
@@ -939,6 +1112,8 @@
 
             document.body.querySelector('#megamain').classList.add("megaattaque");
             document.body.querySelector('.megalaser').style.display = "block";
+            megaudio.play();
+
 
 
         });
@@ -958,16 +1133,20 @@
         document.body.querySelector('.megaattspe').addEventListener('click', function() {
 
             document.body.querySelector('#megamain').classList.add("megaattaquespe");
+            ultiaudiom.play();
             setTimeout(function() {
-
+                megaudioult.play();
                 document.body.querySelector('.laserspe').style.display = "block";
+
             }, 2200);
+
 
         })
 
 
-        let lasermegaspe = document.body.querySelector('.laserspe');
+        let lasermegaspe = document.body.querySelector('.laserspe');;
         lasermegaspe.addEventListener("animationend", function() {
+
             this.style.display = "none";
         });
 
@@ -1022,13 +1201,13 @@
         };
 
         function defplus() {
-            attaquant.def += 3
+            attaquant.def += 6;
             affichage();
             turnround();
         }
 
         function healplus() {
-            attaquant.hp += 10;
+            attaquant.hp += 22;
             if (attaquant.hp >= 100) {
                 attaquant.hp = 100;
             }
@@ -1051,8 +1230,15 @@
             cible.hp -= degat;
             attaquant.energy += 20;
 
-            if (cible.hp <= 0) {
-                cible.hp = 0;
+            if (mega.hp <= 0) {
+                mega.hp = 0;
+                document.querySelector('#megamain').classList.add('deathmega');
+                document.querySelector('.deathmega').style.animationName = "deathM"
+            }
+            if (zero.hp <= 0) {
+                zero.hp = 0;
+                document.querySelector('#zeromain').classList.add('zerodeath');
+                document.querySelector('.zerodeath').style.animationName = "deathZ";
             }
             affichage();
             turnround();
@@ -1065,11 +1251,16 @@
                 let degat = attaquant['attspe'] - cible.def;
                 cible.hp -= degat;
                 attaquant.energy -= 60;
-                if (cible.hp <= 0) {
-                    cible.hp = 0;
+                if (mega.hp <= 0) {
+                    mega.hp = 0;
+                    document.querySelector('#megamain').classList.add('deathmega');
+                    document.querySelector('.deathmega').style.animationName = "deathM"
                 }
-
-
+                if (zero.hp <= 0) {
+                    zero.hp = 0;
+                    document.querySelector('#zeromain').classList.add('zerodeath');
+                    document.querySelector('.zerodeath').style.animationName = "deathZ";
+                }
                 affichage();
                 turnround();
             }
