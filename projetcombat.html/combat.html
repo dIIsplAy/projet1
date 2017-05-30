@@ -716,6 +716,74 @@
             }
         }*/
         
+        @keyframes dragon {
+            0% {
+                bottom: 68%;
+                left: 5%;
+            }
+            5% {
+                left: 10%
+            }
+            10% {
+                bottom: 72%;
+                left: 20%;
+            }
+            15% {
+                left: 30%
+            }
+            20% {
+                bottom: 78%;
+                left: 40%;
+            }
+            25% {
+                left: 50%
+            }
+            30% {
+                bottom: 76%;
+                left: 60%;
+            }
+            35% {
+                left: 75%
+            }
+            40% {
+                bottom: 72%;
+                left: 90%;
+            }
+            45% {
+                left: 75%
+            }
+            50% {
+                bottom: 76%;
+                left: 60%;
+            }
+            55% {
+                left: 50%
+            }
+            60% {
+                bottom: 78%;
+                left: 40%;
+            }
+            65% {
+                left: 32%
+            }
+            70% {
+                bottom: 76%;
+                left: 25%;
+            }
+            80% {
+                bottom: 72%;
+                left: 20%;
+            }
+            90% {
+                bottom: 78%;
+                left: 15%;
+            }
+            100% {
+                bottom: 76%;
+                left: 5%;
+            }
+        }
+        
         @font-face {
             font-family: "capcommega";
             src: url('emulogic.ttf');
@@ -770,6 +838,18 @@
             flex-direction: column;
             justify-content: space-around;
             border-right: 3px solid lightslategray;
+        }
+        
+        #dragon {
+            animation: dragon 60s;
+            background-image: url('imagedragon/dragon.png');
+            bottom: 72%;
+            left: 5%;
+            width: 110px;
+            height: 130px;
+            background-size: 98%;
+            position: absolute;
+            animation-iteration-count: infinite;
         }
         
         #mega {
@@ -992,6 +1072,8 @@
     <div class="megalaser">
     </div>
     <div class="laserspe">
+    </div>
+    <div id="dragon">
     </div>
 
 
